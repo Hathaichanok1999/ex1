@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeContreller@index');
+Route::get('/about', 'HomeContreller@about');
+Route::get('/contact', 'HomeContreller@contact');
+Route::get('/user', 'UserContreller@index') ;
+Route::get('/user/create', 'UserContreller@create');
+Route::get('/user/{name}', 'UserContreller@ShowName');
+Route::get('/user/{name}/{age}', 'UserContreller@ShowNameAndAge');
+
+
